@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Crafty+Girls&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -31,6 +31,7 @@ body {
   font-family: "Sansita", sans-serif;
   display: flex;
   position: fixed;
+  z-index: 1000;
   width: 100%;
 }
 
@@ -45,14 +46,47 @@ body {
   justify-content: space-between;
   font-size: 26px;
   gap: 25px;
-
   color: #fff4e4;
 }
 
 a {
   text-decoration: none;
-  margin-left: 60px;
+  margin-left: 50px;
   color: #fff4e4;
+}
+
+.text-header nav a {
+  text-decoration: none;
+  color: #fff4e4;
+  font-family: "Sansita", sans-serif;
+  font-size: 26px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  padding: 5px 0;
+}
+
+.text-header nav a:hover {
+  color: #ffffff;
+  transform: translateY(-5px);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.text-header nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.893);
+  transition: width 0.3s ease;
+}
+
+.text-header nav a:hover::after {
+  width: 100%;
 }
 
 .text-header p {
@@ -96,15 +130,78 @@ a {
   transition: background-color 0.3s;
 }
 
-.search-button:hover {
-  background-color: #550000;
-}
-
 .busket {
   width: 60px;
   height: 70px;
-  margin-left: 40px;
   margin-top: 23px;
+  margin-right: 50px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #d9d9d9;
+  margin: 12% auto;
+  font-family: "Eczar", serif;
+  padding: 20px 30px;
+  border-radius: 15px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+  color: #501216;
+  margin-top: 0;
+  font-weight: lighter;
+  font-size: 28px;
+}
+
+.modal-content h2:hover {
+  color: #a3464d;
+}
+
+/* --- Крестик --- */
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* --- Поле ввода и кнопка --- */
+.modal-content input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #501216;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Eczar", serif;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+.modal-content button:hover {
+  background-color: #8e1212;
+  color: black;
 }
 
 .bc-foto {
@@ -119,8 +216,21 @@ h1 {
   color: #fff;
   font-weight: lighter;
   font-size: 70px;
+  animation: constantGlow 3s ease-in-out infinite;
 }
 
+@keyframes constantGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(119, 3, 3, 0.8), 0 0 20px rgba(87, 24, 24, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 20px rgb(108, 18, 18), 0 0 40px rgba(96, 19, 19, 0.8),
+      0 0 60px rgba(133, 6, 6, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(150, 8, 8, 0.8), 0 0 20px rgba(109, 10, 10, 0.6);
+  }
+}
 .prolog {
   font-family: "Crafty Girls", cursive;
   margin-left: 50px;
@@ -139,7 +249,20 @@ h1 {
 .foto1 {
   width: 400px;
   margin-left: 67%;
-  margin-top: -300px;
+  margin-top: -320px;
+  animation: gentlePulse 2.5s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .text-about,
@@ -174,9 +297,16 @@ h1 {
 }
 
 #streetShorts img {
-  width: 350px;
   height: 450px;
   margin-left: 20px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+#streetShorts img:hover {
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .textStreetShorts {
@@ -189,12 +319,24 @@ h1 {
   color: #501216;
   font-size: 42px;
   margin-left: 35%;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.boys{
+.girls:hover {
+  text-shadow: 0 0 15px rgba(250, 99, 99, 0.7);
+}
+
+.boys:hover {
+  text-shadow: 0 0 15px rgba(107, 168, 255, 0.7);
+}
+
+.boys {
   font-family: "Eczar", serif;
   color: #ffffffaa;
   font-size: 42px;
+  transition: all 0.3s ease;
+  cursor: pointer;
   margin-left: 65%;
   margin-top: -120px;
 }
@@ -203,7 +345,7 @@ h1 {
   margin-top: 120px;
 }
 
-.cards{
+.cards {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -211,29 +353,142 @@ h1 {
   margin-bottom: 50px;
 }
 
-.cards img{
-  width: 250px;
-  height: 320px;
-  margin-top: 30px;
-  margin-left: 30px;
-}
-.cardOne, .cardTwo, .cardThree, .cardFour, .cardFive, .cardSix, .cardSeven, .cardEuight, .cardNine{
-  background-color: #D9D9D9;
+.cardOne,
+.cardTwo,
+.cardThree,
+.cardFour,
+.cardFive,
+.cardSix,
+.cardSeven,
+.cardEuight,
+.cardNine,
+.cardTen,
+.cardEleven,
+.cardTwelve,
+.cardThirteen,
+.cardFourteen,
+.cardFifteen,
+.cardSixteen,
+.card1,
+.card2,
+.card3,
+.card4,
+.card5,
+.card6,
+.card7,
+.card8,
+.card9,
+.card10,
+.card11,
+.card12 {
+  background-color: #d9d9d9;
   width: 320px;
   margin-top: 15px;
   margin-left: 15px;
 }
 
-.text-card{
+.product-card {
+  transition: all 0.4s ease;
+  border: 1px solid transparent;
+}
+
+.product-card:hover {
+  box-shadow: 0 0 25px rgba(222, 0, 0, 0.764);
+  transform: scale(1.01);
+}
+
+.product {
+  transition: all 0.4s ease;
+  border: 1px solid transparent;
+}
+
+.product:hover {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.764);
+  transform: scale(1.01);
+}
+
+.i {
+  width: 250px;
+  height: 320px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.text-card {
   font-family: "Sansita", sans-serif;
   text-align: center;
   font-size: 21px;
   margin-top: -1px;
 }
 
-.price{
+.price {
   font-family: "Sansation", sans-serif;
-text-align: center;
-color: #68191E;
-font-size: 20px;
+  text-align: center;
+  color: #68191e;
+  font-size: 20px;
+}
+
+.cart-icon {
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  margin-left: 250px;
+  margin-top: -100px;
+  margin-bottom: 15px;
+}
+
+.cont {
+  font-family: "Eczar", serif;
+  color: #ffffffaa;
+  font-size: 42px;
+  display: flex;
+  gap: 100px;
+  margin-left: 40%;
+  margin-right: 60%;
+  justify-content: space-between;
+}
+
+.boyS {
+  color: #501216;
+}
+
+.footer {
+  background-color: #141414;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  margin-top: 100px;
+  height: 200px;
+}
+
+.copy {
+  color: #fff4e4;
+  font-size: 23px;
+  margin-left: 40px;
+  font-family: "Eczar", serif;
+}
+
+.text2 {
+  color: #fff4e4;
+  font-size: 30px;
+  margin-left: 32%;
+  margin-top: 30px;
+  font-family: "Eczar", serif;
+}
+
+.image {
+  width: 450px;
+  height: 250px;
+  margin-top: 100px;
+  margin-left: 50px;
+  margin-bottom: 35px;
+}
+.tg,
+.inst,
+.ds {
+  width: 100px;
+  height: 100px;
+  margin-left: 40px;
+  margin-top: -200px;
 }

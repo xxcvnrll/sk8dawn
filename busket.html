@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — Sk8Dawn</title>
+  <link href="busket.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="header">
+      <a class="nav" href="index.html">
+        <img class="logo" src="kartinki/logo.png" height="50" alt="logo">
+      </a>
+
+      <div class="text-header">
+        <nav>
+          <a href="index.html#about">About</a>
+          <a href="index.html#streetShorts">Street Shorts</a>
+          <a href="index.html#dropShop">Drop Shop</a>
+          <a href="#" id="supportBtn">Support</a>
+        </nav>
+      </div>
+
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Type your text..">
+        <button class="search-button">Find</button>
+      </div>
+
+      <a href="busket.html">
+        <img class="busket" src="kartinki/image 14.png" alt="cart">
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="cart-container">
+      <h1>Your Cart</h1>
+      <div id="cartItems"></div>
+      <h2 id="total">Order amount: $0</h2>
+      <button id="orderBtn" class="order-btn">Order</button>
+    </div>
+
+    <div id="orderForm" class="order-form">
+      <h2>Place Your Order</h2>
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="text" id="name" placeholder="Surname" required>
+      <input type="email" placeholder="Enter your email">
+      <input type="tel" id="phone" placeholder="+380(__) ___-__-__" required>
+      <input type="text" id="address" placeholder="Address" required>
+      <textarea rows="4" placeholder="Your comment"></textarea>
+      <button id="confirmBtn">Confirm Order</button>
+    </div>
+  </main>
+
+  <script src="busket.js"></script>
+  <script src="support.js"></script>
+</body>
+
+</html>

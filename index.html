@@ -4,35 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
+    <title>sk8Dawn</title>
     <link href="main.css" rel="stylesheet" />
 </head>
 
 <body>
     <header>
         <div class="header">
-            <a class="nav" href="main.html"><img class='logo' src='kartinki/logo.png' height="50px" alt='logo'></a>
+            <a class="nav" href="index.html"><img class='logo' src='kartinki/logo.png' height="50px" alt='logo'></a>
 
             <div class="text-header">
                 <nav>
                     <a href="#about">About</a>
                     <a href="#streetShorts">Street Shorts</a>
                     <a href="#dropShop">Drop Shop</a>
-                    <a href="#">Support</a>
+                    <a href="#" id="supportBtn">Support</a>
                 </nav>
+            </div>
+            <div id="supportModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Got any questions?</h2>
+                    <p>Please leave your phone number and we will
+                        contact you.</p>
+                    <input type="tel" id="phoneInput" placeholder="+000 (__) ___-__-__">
+                    <button id="sendBtn">SEND</button>
+                </div>
             </div>
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="Type your text..">
                 <button class="search-button">Find</button>
             </div>
-            <img class="busket" src="kartinki/image 14.png">
-        </div>
+
+            <a href="busket.html">
+                <img class="busket" src="kartinki/image 14.png">
+        </div></a>
+
     </header>
     <main>
         <img class="bc-foto" src="kartinki/image 2.png">
         <h1>DROP IS LIVE</h1>
         <p class="prolog">Hurry to pick it up before it disappears.</p>
-        <img class="foto1" src="/kartinki/image 3.png">
+        <img class="foto1" src="kartinki/image 3.png">
 
         <p class="prolog2">Each collection is released only once.<br>
             No duplicates. <br>
@@ -65,50 +78,235 @@
         <p class="girls">Girls</p>
         <p class="boys">Boys</p>
         <div class="cards">
-            <div class="cardOne">
-                <img src="cards-foto/image 13.png">
+            <div class="cardOne product-card">
+                <img class="i" src="cards-foto/image 13.png">
                 <p class="text-card">Flared jeans,<br>
                     black with print</p>
                 <p class="price">$45.95</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
             </div>
-            <div class="cardTwo">
-                <img src="cards-foto/image 16.png">
+            <div class="cardTwo product-card">
+                <img class="i" src="cards-foto/image 16.png">
                 <p class="text-card">Graphite colored <br>hoodie with spider</p>
                 <p class="price">$29.95</p>
+                <img class="cart-icon" src="kartinki/shop.png">
             </div>
-            <div class="cardThree">
-                <img src="cards-foto/image 17.png">
+            <div class="cardThree product-card">
+                <img class="i" src="cards-foto/image 17.png">
                 <p class="text-card">Black cyberpunk<br> studded sunglasses</p>
                 <p class="price">$15.75</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
             </div>
-            <div class="cardFour">
-                <img src="cards-foto/1.png">
+            <div class="cardFour product-card">
+                <img class="i" src="cards-foto/1.png">
                 <p class="text-card">Black strapless top<br> with straps</p>
                 <p class="price">$25.99</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
             </div>
-             <div class="cardFive">
-                <img src="cards-foto/image 13 (1).png">
+            <div class="cardFive product-card">
+                <img class="i" src="cards-foto/image 13 (1).png">
                 <p class="text-card">High leather boots<br> with a cross</p>
                 <p class="price">$129.00</p>
-            </div><div class="cardSix">
-                <img src="cards-foto/image 16 (1).png">
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="cardSix product-card">
+                <img class="i" src="cards-foto/image 16 (1).png">
                 <p class="text-card">Red sleeveless top<br> with a choker</p>
                 <p class="price">$17.95</p>
-            </div><div class="cardSeven">
-                <img src="cards-foto/image 17 (1).png">
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="cardSeven product-card">
+                <img class="i" src="cards-foto/image 17 (1).png">
                 <p class="text-card">Black long sleeve<br> top with straps</p>
                 <p class="price">$12.75</p>
-            </div><div class="cardEuight">
-                <img src="cards-foto/image 18 (1).png">
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="cardEuight product-card">
+                <img class="i" src="cards-foto/image 18 (1).png">
                 <p class="text-card">Black shoulder bag<br> with stars</p>
                 <p class="price">$89.95</p>
-            </div><div class="cardNine">
-                <img src="cards-foto/image 13 (2).png">
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="cardNine product-card">
+                <img class="i" src="cards-foto/image 13 (2).png">
                 <p class="text-card">Black zip-up top<br> with laces</p>
                 <p class="price">$31.75</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="cardTen product-card">
+                <img class="i" src="cards-foto/22.png">
+                <p class="text-card">Gray zip-up jacket</p>
+                <p class="price">$37.99</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="cardEleven product-card">
+                <img class="i" src="cards-foto/23.png">
+                <p class="text-card">Brown long sleeve top<br>with cutouts</p>
+                <p class="price">$22.95</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="cardTwelve product-card">
+                <img class="i" src="cards-foto/24.png">
+                <p class="text-card">Graphite jeans with<br> pockets</p>
+                <p class="price">$55.70</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="cardThirteen product-card">
+                <img class="i" src="cards-foto/25.png">
+                <p class="text-card">Leopard jeans with<br> lettering</p>
+                <p class="price">$49.95</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="cardFourteen product-card">
+                <img class="i" src="cards-foto/26.png">
+                <p class="text-card">Dark blue T-shirt<br>with stars</p>
+                <p class="price">$27.50</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="cardFifteen product-card">
+                <img class="i" src="cards-foto/27.png">
+                <p class="text-card">Dark blue jeans with<br> a belt</p>
+                <p class="price">$62.95</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="cardSixteen product-card">
+                <img class="i" src="cards-foto/28.png">
+                <p class="text-card">Blue denim dress<br> with ruffles</p>
+                <p class="price">$85.75</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+            </div>
+            <div class="cont">
+                <p class="girlS">Girls</p>
+                <p class="boyS">Boys</p>
+            </div>
+            <div class="card1 product">
+                <img class="i" src="cards-foto/r.png">
+                <p class="text-card">Flared jeans,<br>
+                    black with print</p>
+                <p class="price">$42.75</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="card2 product">
+                <img class="i" src="cards-foto/t.png">
+                <p class="text-card">Graphite colored <br>hoodie with spider</p>
+                <p class="price">$57.90</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+            </div>
+            <div class="card3 product">
+                <img class="i" src="cards-foto/s.png">
+                <p class="text-card">Black cyberpunk<br> studded sunglasses</p>
+                <p class="price">$29.95</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="card4 product">
+                <img class="i" src="cards-foto/ц.png">
+                <p class="text-card">Black strapless top<br> with straps</p>
+                <p class="price">$36.50</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="card5  product">
+                <img class="i" src="cards-foto/j.png">
+                <p class="text-card">High leather boots<br> with a cross</p>
+                <p class="price">$12.90</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="card6 product">
+                <img class="i" src="cards-foto/k.png">
+                <p class="text-card">Red sleeveless top<br> with a choker</p>
+                <p class="price">$43.95</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="card7 product">
+                <img class="i" src="cards-foto/p.png">
+                <p class="text-card">Black long sleeve<br> top with straps</p>
+                <p class="price">$39.75</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="card8 product">
+                <img class="i" src="cards-foto/f.png">
+                <p class="text-card">Black shoulder bag<br> with stars</p>
+                <p class="price">$26.50</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="card9 product">
+                <img class="i" src="cards-foto/q.png">
+                <p class="text-card">Black zip-up top<br> with laces</p>
+                <p class="price">$92.90</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+            </div>
+            <div class="card10 product">
+                <img class="i" src="cards-foto/l.png">
+                <p class="text-card">Black long sleeve<br> top with straps</p>
+                <p class="price">$53.95</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="card11 product">
+                <img class="i" src="cards-foto/sw.png">
+                <p class="text-card">Black shoulder bag<br> with stars</p>
+                <p class="price">$27.75</p>
+                <img class="cart-icon" src="kartinki/shop.png">
+
+            </div>
+            <div class="card12 product">
+                <img class="i" src="cards-foto/y.png">
+                <p class="text-card">Black zip-up top<br> with laces</p>
+                <p class="price">$16.50</p>
+                <img class="cart-icon" src="kartinki/shop.png">
             </div>
     </section>
+    <footer>
+        <div class="footer">
+            <p class="copy">©Sk8Dawn</p>
+            <p class="text2">«No Restock. No Rules.»</p>
+            <img class="image" src="image 23.png">
+            <img class="tg" src="tg.png">
+            <img class="inst" src="inst.png">
+            <img class="ds" src="ds.png">
+    </footer>
+    <script>
+        let cartIcons = document.querySelectorAll('.cart-icon');
 
+        cartIcons.forEach(icon => {
+            icon.addEventListener('click', () => {
+                let card = icon.closest('div');
+                let name = card.querySelector('.text-card').innerText;
+                let price = card.querySelector('.price').innerText;
+                let image = card.querySelector('.i').getAttribute('src');
+
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push({ name, price, image });
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                alert('✅ Product added to cart!');
+            });
+        });
+    </script>
+    <script src="support.js"></script>
+    <script src="main.js"></script>
+    <script src="search.js"></script>
 </body>
 
 </html>
